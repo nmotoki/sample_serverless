@@ -2,10 +2,8 @@ import json
 import urllib.parse
 import boto3
 import csv
-import traceback
 import re
 import os
-import ast
 from botocore.exceptions import ClientError
 
 
