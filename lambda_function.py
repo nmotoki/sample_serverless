@@ -31,11 +31,13 @@ def lambda_handler(event, context):
     print("success_read_bucket:"+input_bucket)
 
     # S3からアップロードされたCSVファイルをJSONファイルに変換
-    json_list = modify_csv(s3, input_bucket, input_key, tmp_path)
-    print(json_list)
+    json_str = modify_csv(s3, input_bucket, input_key, tmp_path)
+    print(json_str)
 
-    # JSONファイルをS3にアップロードする
-    upload_file(output_bucket, output_key, bytes(json_list, 'UTF-8'))
+    # JSON_strファイルをS3にアップロードする
+    upload_file(output_bucket, output_key, bytes(json_str,encoding='utf-8'))
+
+
 
 # CSVファイルをJSONファイルに変換する関数
 def modify_csv(s3, input_bucket, input_key, tmp_path):
@@ -48,8 +50,8 @@ def modify_csv(s3, input_bucket, input_key, tmp_path):
                 json_list.append(row)
 
         # JSON ファイルへの書き込み
-        with open('output.json', 'w') as f:
-            json.dump(json_list, f)
+        json_list = json.dumps(json_list)
+        print(json_list)
 
     except Exception as e:
         print(e)        
