@@ -2,8 +2,8 @@
 sample project for serverless FaaS
 
 # Features
-sample_serverless is a program for convert a csv file into json file
-sample_serverlessはCSVファイルをJASONファイルに変換するプログラムです]
+* sample_serverless is a program for convert a csv file into json file
+* sample_serverlessはCSVファイルをJASONファイルに変換するプログラムです
 
 # Requirement 
 * Python 3.7
@@ -24,8 +24,8 @@ sample_serverlessはCSVファイルをJASONファイルに変換するプログ�
     - sample_data.csv
 
 2. AWSマネジメントコンソールにログイン
-AWSアカウントの登録、MFA設定、IAMユーザーの登録はできていることを前提
-リージョンはアジアパシフィック（東京）
+* AWSアカウントの登録、MFA設定、IAMユーザーの登録はできていることを前提
+* リージョンはアジアパシフィック（東京）
 
 3. S3バケットのセットアップ
     1. AWSマネジメントコンソールからS3のコンソール画面を開く
